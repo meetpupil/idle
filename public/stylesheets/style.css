@@ -9,7 +9,6 @@ body {
 
 h1 {
   font-size: 1.8em;
-  text-align: center !important;
   font-weight: 800;
 }
 
@@ -21,6 +20,10 @@ h2 {
 h3 {
   font-size: 1.1em;
   font-weight: 300 !important;
+}
+
+h4 {
+  font-weight: 600;
 }
 
 *, *:before, *:after {

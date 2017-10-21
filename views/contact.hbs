@@ -1,0 +1,28 @@
+<div class="container content">
+  <div class="panel user">
+    <center><div class="panel-heading"><strong>Contact DevPupil</strong></div></center>
+    <br>
+
+    <div class="panel-body">
+      <form method="post">
+        {{#each errorMessages}}
+          <div class="alert alert-danger">
+            {{this.msg}}
+          </div>
+        {{/each}}
+
+        <div class="form-group">
+          <input type="text" placeholder="Name" name = "name" value = {{name}}>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" name = "email" value = {{email}}>
+        </div>
+        <div class="form-group">
+          <textarea type="text" rows="3" placeholder="Tell us your school or organization name, your contact info, and how we can help you." name = "message">{{message}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-new">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
