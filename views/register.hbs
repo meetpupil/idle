@@ -1,0 +1,27 @@
+<div class="container content">
+  <div class="panel user">
+    <div class="panel-heading">
+      <strong>Create an account</strong>
+      <span class="pull-right"><h6>or </h6><a href="/login"><h6>sign in</h6></a></span>
+    </div>
+    <div class="panel-body">
+      <form class="form-signin" method="post">
+      {{#each errorMessages}}
+        <div class="alert alert-danger">
+          {{this.msg}}
+        </div>
+      {{/each}}
+
+      <input type="text" name="name" class="form-control" placeholder="Name" require="" autofocus="" name = "name" value = {{name}}>
+      <br/>
+      <input type="email" name="email" class="form-control" placeholder="Email" require="" autofocus="" name = "email" value = {{email}}>
+      <br/>
+      <input type="password" name="password" class="form-control" placeholder="Password" require="" >
+      <br/>
+      <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" require="">
+      <br/>
+      <button type="submit" class="btn btn-new">Create an account</button>
+      </form>
+    </div>
+  </div>
+</div>
