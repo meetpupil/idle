@@ -17,7 +17,22 @@ router.route('/contact')
     res.render('contact', { title: 'Contact DevPupil'});
   })
   .post(function(req, res, next) {
-    res.render('thank', { title: 'Thank You!'});
+    req.checkBody('name', 'Empty name').notEmpty();
+    req.checkBody('email', 'Invalid email').isEmail();
+    req.checkBody('message', 'Empty message').notEmpty();
+    var errors = req.validationErrors();
+
+    if(errors) {
+      res.render('contact', {
+        title: 'Contact DevPupil',
+        name: req.body.name,
+        email: req.body.email,
+        message: req.body.message,
+        errorMessages: errors
+      });
+    } else {
+      res.render('thank', { title: 'Thank You!'});
+    }
   });
 
 module.exports = router;
