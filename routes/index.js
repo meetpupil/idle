@@ -52,12 +52,4 @@ router.route('/contact')
     }
   });
 
-  router.get('/login', function(req, res, next) {
-    res.render('login', { title: 'Sign In | DevPupil'});
-  });
-
-  router.get('/register', function(req, res, next) {
-    res.render('register', { title: 'Sign Up | DevPupil'});
-  });
-
-  module.exports = router;
+module.exports = router;
