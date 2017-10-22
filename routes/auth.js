@@ -4,7 +4,7 @@ var passport = require('passport');
 
 router.route('/login')
   .get(function(req, res, next) {
-    res.render('login', { title: 'Login your account'});
+    res.render('login', { title: 'Sign In | DevPupil'});
   })
   .post(passport.authenticate('local', {
     failureRedirect: '/login'
@@ -14,7 +14,7 @@ router.route('/login')
 
 router.route('/register')
   .get(function(req, res, next) {
-    res.render('register', { title: 'Register a new account'});
+    res.render('register', { title: 'Sign Up | DevPupil'});
   })
   .post(function(req, res, next) {
     req.checkBody('name', 'Empty Name').notEmpty();
@@ -44,4 +44,9 @@ router.route('/register')
     }
   });
 
-  module.exports = router;
+router.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+module.exports = router;
