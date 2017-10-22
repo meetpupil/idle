@@ -2,13 +2,19 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
-router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Sign In | DevPupil'});
-});
+router.route('/login')
+  .get(function(req, res, next) {
+    res.render('login', { title: 'Login your account'});
+  })
+  .post(passport.authenticate('local', {
+    failureRedirect: '/login'
+  }), function (req, res) {
+    res.redirect('/');
+  });
 
 router.route('/register')
   .get(function(req, res, next) {
-    res.render('register', { title: 'Sign Up | DevPupil'});
+    res.render('register', { title: 'Register a new account'});
   })
   .post(function(req, res, next) {
     req.checkBody('name', 'Empty Name').notEmpty();
