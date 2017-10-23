@@ -8,6 +8,6 @@ module.exports = {
       pass: 'Lebron06'
     }
   },
-  dbConnstring: 'mongodb://127.0.0.1:27017/codeshare',
+  dbConnstring: 'mongodb://admin:Jumpman23@ds229465.mlab.com:29465/codeshare',
   sessionKey: 'devpupil'
 }
