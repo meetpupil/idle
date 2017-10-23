@@ -1,6 +1,9 @@
+{{#unless user}}
+
 <div class="container content">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-sm-12 col-md-3 col-lg-3"></div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
       <center>
         <h1>Time to start coding!</h1>
         <br>
@@ -12,5 +15,14 @@
         </div>
       </center>
     </div>
+    <div class="col-sm-12 col-md-3 col-lg-3"></div>
   </div>
 </div>
+
+{{else}}
+  <div class="container content">
+    <p>Welcome to DevPupil!</p>
+    <br>
+    <a href="/createTask" class="btn btn-new">Create New Session</a>
+  </div>
+{{/unless}}
